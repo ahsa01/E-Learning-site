@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <script src="../JS/home.js"></script>
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="../CSS/contact.css">
+</head>
+
+<body>
+    <nav class="navbar">
+
+        <div class="nav_container ">
+            <a href="home.html" class="logo"><i class="fa-solid fa-graduation-cap fa-xl" style="color: #ffffff;"></i>
+                E-Learn</a>
+            <ul class="nav_menu">
+                <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="contact.html">Tutors</a></li>
+                    <li><a href="chatbox.html">Live Chat</a></li>
+                <li>
+                    <div id="account-btn" class="fas fa-user"></div>
+                </li>
+            </ul>
+
+            <div class="icons">
+
+
+                <button id="menu-btn" class="fas fa-bars"></button>
+                <button id="open-menu-btn" class="button">
+                    <span class="X"></span>
+                    <span class="Y"></span>
+                    <div class="close">Close</div>
+                </button>
+            </div>
+
+
+
+        </div>
+    </nav>
+
+
+    <section class="contact">
+        <div class="container contact_container">
+            <aside class="contact_aside">
+                <div class="aside_image">
+                    <img src="../Images/course_page.jpg"  class="side_image"  alt="">
+                </div>
+                <h2>Tutors Form</h2>
+                <p>
+                    Submit new Courses and Topics here...
+                </p>
+                <ul class="contact_details">
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <h5>+00 000 000 0000</h5>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope fa-lg"></i>
+                        <h5>abc@gmail.com</h5>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot fa-lg"></i>
+                        <h5>IIT (BHU) Varanasi</h5>
+                    </li>
+                </ul>
+
+                <ul class="contact_specials">
+                    <li><a href=""><i class="fa-brands fa-facebook fa-lg" ></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-square-instagram" ></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-x-twitter fa-lg" ></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
+                </ul>
+            </aside>
+
+
+            <form action="https://formspree.io/f/xrgnopkk" method="POST" class="course_form">
+                <div class="form_name">
+                    <input type="text" name="First Name" id="" placeholder="Tutor's First Name" required>
+                    <input type="text" name="Last Name" id="" placeholder="Tutor's Last Name" required>
+
+                </div>
+
+                <input type="email" name="Email Address" placeholder="Tutor's Mail"required>
+                <input type="text" name="couse name" placeholder="Course Name"required>
+                <input type="text" name="topic name" placeholder="Topic"required>
+                <input type="file" name="Video File" placeholder="File to upload"required>
+                <textarea name="Message" id=""rows="7" placeholder="Message For Our Team"></textarea>
+                <button type="submit" class="submit_form">Submit</button>
+            </form>
+        </div>
+    </section>
+
+
+
+
+    <footer class="footer">
+        <div class="container footer_container">
+            <div class="footer_1">
+                <a href="" class="footer__logo">
+                    <h4>E-LEARN</h4>
+                </a>
+                <P>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda perferendis id quia aperiam
+                    atque ipsa.
+                </P>
+            </div>
+
+            <div class="footer_2">
+                <h4>Permalinks</h4>
+                <ul class="Permalinks">
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">CONTENT</a></li>
+                    <li><a href="">COURSES</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_3">
+                <h4>Primacy</h4>
+                <ul class="privacy">
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Terms and Condition</a></li>
+                    <li><a href="">Refund Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_4">
+                <h4>Contact Us</h4>
+                <div>
+                    <p>+00 000 000 000</p>
+                    <p>abc@gmail.com</p>
+                </div>
+
+                <ul class="footer_socials">
+                    <li>
+                        <a href=""><i class="fa-brands fa-facebook" style="color: #63E6BE;"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa-brands fa-instagram" style="color: #63E6BE;"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa-brands fa-linkedin" style="color: #63E6BE;"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer_copyright">
+            <small>Copyright &copy; E-Learn</small>
+        </div>
+
+    </footer>
+</body>
+
+</html>

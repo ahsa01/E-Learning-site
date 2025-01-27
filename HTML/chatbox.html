@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="../CSS/chatbox.css">
+    
+</head>
+<body>
+
+    <nav class="navbar">
+            
+        <div class="nav_container ">
+            <a href="home.html" class="logo"><i class="fa-solid fa-graduation-cap fa-xl" style="color: #ffffff;"></i> E-Learn</a>
+            <ul class="nav_menu">
+                <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="contact.html">Tutors</a></li>
+                    <li><a href="chatbox.html">Live Chat</a></li>
+                <li>
+                    <div id="account-btn" class="fas fa-user"></div>
+                </li>
+            </ul>
+            
+            <div class="icons">
+                
+                
+                <button id="menu-btn" class="fas fa-bars"></button>
+                <button id="open-menu-btn" class="button">
+                    <span class="X"></span>
+                    <span class="Y"></span>
+                    <div class="close">Close</div>
+                </button>
+            </div>
+            
+            
+            
+        </div>
+    </nav>
+    
+
+
+
+
+
+
+    <div class="live_cont">
+
+        <div id="messages"></div>
+        
+        <div id="sendMsg">
+            <input type="text" id="msgTxt" placeholder="ENTER YOUR MSG...">
+            <input type="submit" id="msgBtn" value="send" onclick="module.sendMsg()">
+        </div>
+    </div>
+        
+    <script>
+        module = {};
+    </script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+        import { getDatabase, ref, set, remove, onChildAdded, onChildRemoved } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyCEPI9_fUCY4kn0mWs85L9G13Qck0EEWcc",
+            authDomain: "e-learn-611ca.firebaseapp.com",
+            projectId: "e-learn-611ca",
+            storageBucket: "e-learn-611ca.appspot.com",
+            messagingSenderId: "206710475177",
+            appId: "1:206710475177:web:64a32f390984708d181cb8",
+            measurementId: "G-W8L6GJB4V9"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+
+        var msgTxt = document.getElementById('msgTxt');
+        var sender;
+        if (sessionStorage.getItem('sender')) {
+            sender = sessionStorage.getItem('sender');
+        } else {
+            sender = prompt('PLEASE ENTER YOUR NAME');
+            sessionStorage.setItem('sender', sender);
+        }
+
+        onChildAdded(ref(db, "messages"), (data) => {
+            if (data.val().sender == sender) {
+                messages.innerHTML += "<div style=justify-content:end class=outer id=" + data.key + "><div id=inner class=me>you : " + data.val().msg;
+            } else {
+                messages.innerHTML += "<div class=outer id=" + data.key + "><div id=inner class=notMe>" + data.val().sender + " : " + data.val().msg + "</div></div>";
+            }
+        })
+
+        module.sendMsg = function sendMsg() {
+    var msg = msgTxt.value;
+    var timestamp = new Date().getTime();
+    set(ref(db, "messages/" + timestamp), {
+        msg: msg,
+        sender: sender
+    })
+
+    msgTxt.value = "";
+
+    // Scroll to the bottom of the messages container
+    messages.scrollTop = messages.scrollHeight;
+}
+    </script>
+</body>
+
+</html>
