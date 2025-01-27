@@ -1,0 +1,22 @@
+
+nav{
+    background-color: #22c8ba;
+}
+.btn-primary{
+  background-color: #0dcaf0;
+}
+.btn-primary:hover{
+  background-color: white;
+  color: #0dcaf0;
+}
+
+.courses{
+  border-bottom: 5px dotted #22c8ba;
+}
+
+.courses h2{
+    font-size: 10vh;
+    font-style: bold;
+    text-decoration: dotted underline;
+
+}
